@@ -8,7 +8,7 @@ func (g group) Props() GroupProps {
 	return GroupProps(g)
 }
 
-func construct(
+func constructor(
 	groupId GroupId,
 	name groupName,
 	formationDay groupFormationDay,
@@ -21,7 +21,7 @@ func construct(
 }
 
 func Reconstruct(props GroupProps) group {
-	return construct(
+	return constructor(
 		props.groupId,
 		props.groupName,
 		props.groupFormationDay,
@@ -32,7 +32,7 @@ func Form(
 	name groupName,
 	formatinDay groupFormationDay,
 ) group {
-	return construct(
+	return constructor(
 		GenerateGroupId(),
 		name,
 		formatinDay,

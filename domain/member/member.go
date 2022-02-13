@@ -10,7 +10,7 @@ func (m member) Props() MemberProps {
 	return MemberProps(m)
 }
 
-func construct(
+func constructor(
 	memberId MemberId,
 	groupId group.GroupId,
 	firstName memberName,
@@ -31,7 +31,7 @@ func construct(
 }
 
 func Reconstruct(props MemberProps) member {
-	return construct(
+	return constructor(
 		props.memberId,
 		props.groupId,
 		props.firstName,
@@ -50,7 +50,7 @@ func Debut(
 	blood memberBlood,
 	joiningDay memberJoiningDay,
 ) member {
-	return construct(
+	return constructor(
 		GenerateMemberId(),
 		groupId,
 		firstName,
@@ -62,7 +62,7 @@ func Debut(
 }
 
 func (m member) Transfer(groupId group.GroupId) member {
-	return construct(
+	return constructor(
 		m.memberId,
 		groupId,
 		m.firstName,
